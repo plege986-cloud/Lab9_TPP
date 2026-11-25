@@ -1,0 +1,6 @@
+add_library(fractions Fraction.cpp Approximator.cpp legacy.cpp)
+add_executable(Lab9_TPP Lab9_TPP.cpp)
+target_link_libraries(Lab9_TPP PRIVATE fractions)
+add_executable(lab9_tests tests.cpp)
+target_link_libraries(lab9_tests PRIVATE fractions)
+add_test(NAME BeforeAndAfter COMMAND lab9_tests)
